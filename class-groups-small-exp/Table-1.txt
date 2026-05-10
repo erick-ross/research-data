@@ -1,0 +1,7 @@
+Discriminant list:
+Length = 13,   Largest value = -163
+[-3, -4, -7, -8, -11, -12, -16, -19, -27, -28, -43, -67, -163]
+
+Discriminants by Group:
+Group='': [-3, -4, -7, -8, -11, -12, -16, -19, -27, -28, -43, -67, -163]
+
