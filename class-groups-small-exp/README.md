@@ -1,6 +1,6 @@
 # Class Groups of Small Exponent
 
-In the paper, [Distribution of CM points and class groups of small exponent](), we described an algorithm to (conditionally) compute the complete list of (not necessarily fundamental) negative discriminants with class group of small exponent.
+In the paper, [Boundary CM points and Class groups of small exponent](https://arxiv.org/abs/2605.26020), we described an algorithm to (conditionally) compute the complete list of (not necessarily fundamental) negative discriminants with class group of small exponent.
 This repository contains code to run this algorithm, computing the complete list of discriminants for exponent `1 <= E <= 8`.
 
 The final data is contained in [Table 1](/Table-1.txt), [Table 2](/Table-2.txt), [Table 3](/Table-3.txt), [Table 4](/Table-4.txt), [Table 5](/Table-5.txt), [Table 6](/Table-6.txt), [Table 7](/Table-7.txt), [Table 8](/Table-8.txt).
