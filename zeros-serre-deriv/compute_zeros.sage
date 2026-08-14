@@ -337,20 +337,13 @@ def check_interlacing(pts1, pts2, EPS):
 
 
 
-def verify_interlacing_Fk_Fsharpk(k_ub):
-    for k in range(4, k_ub+1, 2):
-        zeros1 = actual_zeros_sharp(k)
-        zeros2 = actual_zeros(k)
-        if k % 100 == 4:
-            print(f'verifying Fk [{len(zeros2)}], Fsharpk [{len(zeros1)}] zeros for k={k}...')
-        assert check_interlacing(zeros1, zeros2, 10^(-8))
-    print(f'Done with verifying interlacing Fk Fsharpk up to {k_ub}.')
 
 
-
-
-EXCEPTIONS1 = [(22, 38), (26, 42), (32, 48), (38, 54)]
-EXCEPTIONS2 = [(14, 28), (16, 26), (16, 30), (16, 36), (18,28), (18,32), (18,36)]
+EXCEPTIONS = [
+            (4, 14), (4, 18), (4, 20), (4, 24), (6, 16), (6, 20), (6, 24), (8, 18), (8, 24), 
+            (10, 20), (10, 24), (10, 26), (10, 28), (10, 30), (10, 32), (10, 36), (14, 24), (14, 30), 
+            (14, 32), (14, 36), (16, 32), (20, 30), (20, 36), (22, 38), (26, 42), (32, 48), (38, 54)
+]
 def verify_interlacing_Fk_Fl(k_ub):
     ZEROS = [[] for i in range(k_ub+27)]
     for k in range(4, k_ub+27, 2):
@@ -359,8 +352,7 @@ def verify_interlacing_Fk_Fl(k_ub):
         ZEROS[k] = actual_zeros(k)
     for k in range(4, k_ub+1, 2):
         for ell in range(k+2, k+27, 2):
-            if n_k(k) >= 2: cond1 = bool(ell-k in [2,4,6,8,12]       or  (k,ell) in EXCEPTIONS1)
-            else:           cond1 = bool(abs(n_k(k) - n_k(ell)) <= 1 and (k,ell) not in EXCEPTIONS2)
+            cond1 = bool(ell-k in [2,4,6,8,12]  or  (k,ell) in EXCEPTIONS)
             cond2 = check_interlacing(ZEROS[ell], ZEROS[k], 0)
             assert cond1 == cond2
     print(f'Done with verifying interlacing up to {k_ub}.')
@@ -379,6 +371,20 @@ def verify_Stieltjes_interlacing_Fk_Fl(k_ub):
         for ell in range(k+2, ell_ub(k)+1, 2):
             assert check_Stieltjes_interlacing(ZEROS[ell], ZEROS[k], 10^(-11))
     print(f'Done with verifying Stieltjes interlacing up to {k_ub}.')
+
+
+
+
+def verify_interlacing_Fk_Fsharpk(k_ub):
+    for k in range(4, k_ub+1, 2):
+        zeros1 = actual_zeros(k)
+        zeros2 = actual_zeros_sharp(k)
+        if k % 100 == 4:
+            print(f'verifying Fk [{len(zeros1)}], Fsharpk [{len(zeros2)}] zeros for k={k}...')
+        assert check_interlacing(zeros1, zeros2, 10^(-8))
+    print(f'Done with verifying interlacing Fk Fsharpk up to {k_ub}.')
+
+
 
 
 
