@@ -1,6 +1,6 @@
 # Asymptotics of Hecke polynomial coefficients on the Atkin-Lehner eigenspaces
 
-In the paper [Asymptotics of Hecke polynomial coefficients on the Atkin-Lehner eigenspaces](), we studied the asymptotic behavior of the Hecke polynomial coefficients on the Atkin-Lehner eigenspaces (i.e. the spaces determined by fixing Atkin_lehner sign patterns).
+In the paper [Asymptotics of Hecke polynomial coefficients on the Atkin-Lehner eigenspaces](), we studied the asymptotic behavior of the Hecke polynomial coefficients on the Atkin-Lehner eigenspaces (i.e. the spaces determined by fixing Atkin-Lehner sign patterns).
 This repository contains code to verify the conjecture stated in the introduction for small parameters.
 
 
